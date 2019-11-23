@@ -2,8 +2,8 @@ sudo: required
 services:
   - docker
   
-before_install:
-  - docker build -t sathyapraba/docker-r1 -f Dockerfile.dev .  
+#before_install:
+#  - docker build -t sathyapraba/docker-r1 -f Dockerfile.dev .  
   
 #script:
 #  - docker run -e CI=true sathyapraba/docker-r1 npm run test
@@ -19,5 +19,5 @@ deploy:
   bucket_path: "docker-r1"
   on:
      branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+  access_key_id: "$AWS_ACCESS_KEY"
+  secret_access_key: "$AWS_SECRET_KEY"
