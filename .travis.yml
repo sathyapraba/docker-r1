@@ -10,3 +10,16 @@ script:
 #  - docker run -e CI=true sathyapraba/docker-r1 npm run test
    - echo "Skip test"
 
+deploy:
+    edge: true
+    provider: elasticbeanstalk
+    region: "us-east-1"
+    app: "docker-r1"
+    env: "DockerR1-env"
+    bucket_name: "elasticbeanstalk-us-east-1-809475690252"
+    bucket_path: "docker-r1"
+    on:
+        branch: master
+    access_key_id: "$AWS_ACCESS_KEY"
+    secret_access_key: "$AWS_SECRET_KEY"
+
