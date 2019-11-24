@@ -5,9 +5,9 @@ services:
 before_install:
   - docker build -t sathyapraba/docker-r1 -f Dockerfile.dev .  
   
-#script:
-#  - docker run -e CI=true sathyapraba/docker-r1 npm run test
-
+script:
+  - docker run -e CI=true sathyapraba/docker-r1 npm run test
+  
 deploy:
     edge: true
     provider: elasticbeanstalk
